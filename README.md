@@ -10,12 +10,12 @@ Denne workshoppen er designet for viderekommende React-utviklere som allerede ha
 
 ## Oppsett 🛠️
 
-Vi skal bruke `create-react-app` som utgangspunkt for våre prosjekter. Sørg for at du har den nyeste versjonen av [Node.js](https://nodejs.org/) installert på din maskin før du starter.
+Sørg for at du har den nyeste versjonen av [Node.js](https://nodejs.org/) installert på din maskin før du starter.
 
 1. Klon dette repositoriet eller last ned prosjektfilene.
 2. Åpne terminalen og naviger til prosjektets rotmappe.
 3. Kjør `npm install` for å installere nødvendige avhengigheter.
-4. Start utviklingsserveren med `npm start`. Dette åpner appen i din standard nettleser.
+4. Start utviklingsserveren med `npm start`.
 
 ## Agenda 📅
 
@@ -28,7 +28,23 @@ Vi skal bruke `create-react-app` som utgangspunkt for våre prosjekter. Sørg fo
 
 ## Oppgaver ✍️
 
-Underveis vil det være praktiske oppgaver hvor du får utforske og implementere det vi har gått gjennom. Oppgavene er designet for å styrke din forståelse og gi deg hands-on erfaring med avanserte React-konsepter.
+Oppgave 1.
+Oppdatere AccountList til ta i bruk useSuspenseQuery
+
+Oppgave 2 
+Utvidere til å håndtere feil også (Error Boundary)
+
+Oppgave 3a
+Refaktorere TransactionsPage til å bruke Suspense for alle fetches.
+
+Oppgave 3b
+Lokal suspense for <Driftsmeldinger/> ? 
+
+
+IDEBANK
+* Resetting Error Boundaries (Retry f.eks på en errorside)
+
+
 
 ## Ressurser 📖
 
