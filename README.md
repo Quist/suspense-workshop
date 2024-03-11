@@ -17,27 +17,19 @@ Sørg for at du har den nyeste versjonen av [Node.js](https://nodejs.org/) insta
 3. Kjør `npm install` for å installere nødvendige avhengigheter.
 4. Start utviklingsserveren med `npm start`.
 
-## Agenda 📅
-
-**Del 1: Dykking i React Query** 🔍
-- Implementere Suspense med `react-query`.
-- Forskjellige måter å bruke Suspense på for datahenting.
-- Kombinere `react-query` og Suspense i komplekse scenarioer.
-- Tips og triks for optimal ytelse og kodevedlikehold.
-- Feilhåndtering og loading states med elegance.
-
 ## Oppgaver ✍️
+BekkBank lanserer en ny storsatsning, BekkBank, men trenger din hjelp for å komme i mål.
 
-Oppgave 1.
-Oppdatere AccountList til ta i bruk useSuspenseQuery
+### Oppgave 1 (AccountPage)
+Ta i bruk Suspense i `AccountList.tsx` ved å endre `useQuery` til `useSuspenseQuery`. Klarer du deg uten if-setninger?
 
-Oppgave 2 
-Utvidere til å håndtere feil også (Error Boundary)
+### Oppgave 2 (AccountPage) 
+Utvide til å håndtere feil også (Error Boundary)
 
-Oppgave 3a
+### Oppgave 3a (TransactionPage)
 Refaktorere TransactionsPage til å bruke Suspense for alle fetches.
 
-Oppgave 3b
+### Oppgave 3b (TransactionPage)
 Lokal suspense for <Driftsmeldinger/> ? 
 
 
