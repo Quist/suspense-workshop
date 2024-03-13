@@ -1,20 +1,30 @@
 import { randomDelay } from "./network.ts";
 
+const testAccounts: Account[] = [
+  {
+    accountName: "Lønnskonto",
+    balance: "550,-",
+    accountType: "Brukskonto",
+  },
+  { accountName: "Bahamas", balance: "20 000,-", accountType: "Sparekonto" },
+  {
+    accountName: "Felleskonto",
+    balance: "-2 740,-",
+    accountType: "Brukskonto",
+  },
+];
 export const fetchAccounts = async (): Promise<Account[]> => {
   await randomDelay();
-  return [
-    { accountName: "Brukskonto", balance: 550 },
-    { accountName: "Bufferkonto", balance: 20_000 },
-    { accountName: "Felleskonto", balance: -37.5 },
-  ];
+  return testAccounts;
 };
 
 export const fetchAccountDetails = async (): Promise<Account> => {
   await randomDelay();
-  return { accountName: "Felleskonto", balance: -37.5 };
+  return testAccounts[0];
 };
 
 export interface Account {
   accountName: string;
-  balance: number;
+  accountType: "Brukskonto" | "BSU" | "Sparekonto";
+  balance: string;
 }

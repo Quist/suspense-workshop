@@ -7,7 +7,7 @@ export const AccountDetailsPage = ({ accountId }: { accountId: string }) => {
   return (
     <>
       <main>
-        <Link to={"payment"}>Betal fra Konto</Link>
+        <Link to={"/accounts/$accountId/payment"}>Betal fra Konto</Link>
 
         <h2>Transaksjoner</h2>
         <Transactions accountId={accountId} />
