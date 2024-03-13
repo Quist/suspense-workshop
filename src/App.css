@@ -2,6 +2,10 @@
   width: 100%;
 }
 
+a {
+  all: unset;
+}
+
 main {
   max-width: 600px;
   margin: 0 auto;

@@ -5,8 +5,13 @@ export const fetchAccounts = async (): Promise<Account[]> => {
   return [
     { accountName: "Brukskonto", balance: 550 },
     { accountName: "Bufferkonto", balance: 20_000 },
-    { accountName: "Fleksikon to", balance: -37.5 },
+    { accountName: "Felleskonto", balance: -37.5 },
   ];
+};
+
+export const fetchAccountDetails = async (): Promise<Account> => {
+  await randomDelay();
+  return { accountName: "Felleskonto", balance: -37.5 };
 };
 
 export interface Account {
