@@ -9,8 +9,13 @@ const testAccounts: Account[] = [
   { accountName: "Bahamas", balance: "20 000,-", accountType: "Sparekonto" },
   {
     accountName: "Felleskonto",
-    balance: "-2 740,-",
+    balance: "2 740,-",
     accountType: "Brukskonto",
+  },
+  {
+    accountName: "BSU",
+    balance: "99 740,-",
+    accountType: "Sparekonto",
   },
 ];
 export const fetchAccounts = async (

@@ -31,7 +31,7 @@ export const AccountBox = ({ account }: { account: Account }) => {
                 fontSize={"sm"}
                 textTransform={"uppercase"}
               >
-                {account.accountName}
+                {account.accountType}
               </Text>
               <Heading fontSize={"2xl"} fontFamily={"body"} fontWeight={500}>
                 {account.accountName}
