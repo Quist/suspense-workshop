@@ -15,7 +15,7 @@ Sørg for at du har den nyeste versjonen av [Node.js](https://nodejs.org/) insta
 1. Klon dette repositoriet eller last ned prosjektfilene.
 2. Åpne terminalen og naviger til prosjektets rotmappe.
 3. Kjør `npm install` for å installere nødvendige avhengigheter.
-4. Start utviklingsserveren med `npm start`.
+4. Start utviklingsserveren med `npm run dev`.
 
 ## Oppgaver ✍️
 BekkBank lanserer en ny storsatsning, BekkBank, men trenger din hjelp for å komme i mål.
@@ -39,7 +39,7 @@ Istedenfor å bruke to separate useSuspenseQuery, se om du kan bruke [useSuspens
 ### Oppgave 4 (PaymentPage)
 Erstatt useQuery med useSuspenseQuery og Error Boundary.
 
-For å implementere refetch funksjonaliteten kan det være du må rette Error Boundary.
+For å implementere refetch funksjonaliteten kan det være du må resette Error Boundary.
 https://tanstack.com/query/latest/docs/framework/react/guides/suspense#resetting-error-boundaries
 
 ### Oppgave 5 (AboutPage)

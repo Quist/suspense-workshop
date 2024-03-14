@@ -13,7 +13,6 @@ import {
 } from "@chakra-ui/react";
 import { useQuery } from "@tanstack/react-query";
 import { fetchPreviousAccountNumbers } from "../../api/payment.ts";
-import { ErrorBoundary } from "react-error-boundary";
 
 // @ts-expect-error Ignore unused accountId
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -22,15 +21,7 @@ export const PaymentPage = ({ accountId }: { accountId: string }) => {
     <>
       <main>
         <Container justifyContent={"center"} mt={10}>
-          <ErrorBoundary
-            fallback={
-              <>
-                <p>Oppps. En teknisk feil skjedde</p>
-              </>
-            }
-          >
-            <PaymentContainer />
-          </ErrorBoundary>
+          <PaymentContainer />
         </Container>
       </main>
     </>
