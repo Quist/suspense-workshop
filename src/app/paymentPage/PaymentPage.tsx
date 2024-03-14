@@ -14,24 +14,22 @@ import {
 import { useQuery } from "@tanstack/react-query";
 import { fetchPreviousAccountNumbers } from "../../api/payment.ts";
 
-// @ts-expect-error Ignore unused accountId
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export const PaymentPage = ({ accountId }: { accountId: string }) => {
   return (
     <>
       <main>
         <Container justifyContent={"center"} mt={10}>
-          <PaymentContainer />
+          <PaymentContainer accountId={accountId} />
         </Container>
       </main>
     </>
   );
 };
 
-const PaymentContainer = () => {
+const PaymentContainer = ({ accountId }: { accountId: string }) => {
   const query = useQuery({
     queryKey: ["previous-accounts"],
-    queryFn: () => fetchPreviousAccountNumbers(true),
+    queryFn: () => fetchPreviousAccountNumbers(accountId, true),
   });
 
   if (query.isLoading) {
