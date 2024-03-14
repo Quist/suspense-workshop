@@ -21,7 +21,7 @@ export const AccountsPage = () => {
 export const AccountList = () => {
   const query = useQuery({
     queryKey: ["account-list"],
-    queryFn: fetchAccounts,
+    queryFn: () => fetchAccounts(false),
   });
 
   // Erstatt denne håndteringen med <Suspense/>

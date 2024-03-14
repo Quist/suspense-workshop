@@ -20,14 +20,21 @@ Sørg for at du har den nyeste versjonen av [Node.js](https://nodejs.org/) insta
 ## Oppgaver ✍️
 BekkBank lanserer en ny storsatsning, BekkBank, men trenger din hjelp for å komme i mål.
 
-### Oppgave 1 (AccountDetailsPage)
-Ta i bruk Suspense i `AccountList.tsx` ved å endre `useQuery` til `useSuspenseQuery`. Klarer du deg uten if-setninger?
+### Oppgave 1 (AccountsPage)
+Ta i bruk Suspense i `AccountsPage.tsx` ved å endre `useQuery` til `useSuspenseQuery`. Klarer du deg uten if-setninger? 
 
-### Oppgave 2 (AccountDetailsPage) 
-Utvide til å håndtere feil også (Error Boundary).
+Implementer en loading-komponent, gjerne ved bruk av [Chakra Spinner](https://chakra-ui.com/docs/components/spinner). 
+
+### Oppgave 2 (AccountsPage) 
+Utvide til å håndtere feil også (Error Boundary). For å enkelt komme i gang kan du installere denne pakken:
+https://www.npmjs.com/package/react-error-boundary
 
 ### Oppgave 3a (AccountDetailsPage)
-Refaktorer AccountDetailsPage til å bruke Suspense for alle fetches.
+Refaktorer AccountDetailsPage til å bruke Suspense.
+
+### Oppgave 3b (AccountDetailsPage)
+Istedenfor å bruke to separate useSuspenseQuery, se om du kan bruke [useSuspenseQueries](https://tanstack.com/query/latest/docs/framework/react/reference/useSuspenseQueries).
+
 
 ### Oppgave 4 (PaymentPage)
 TODO

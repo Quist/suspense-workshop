@@ -6,8 +6,12 @@ export const postPayment = async (accountId: string): Promise<void> => {
   return;
 };
 
-export const fetchPreviousAccountNumbers = async (): Promise<string[]> => {
+export const fetchPreviousAccountNumbers = async (
+  triggerError = false,
+): Promise<string[]> => {
   await randomDelay();
-  throw new Error("Tevry call failed!");
+  if (triggerError) {
+    throw new Error("Tevry call failed!");
+  }
   return ["123", "122"];
 };

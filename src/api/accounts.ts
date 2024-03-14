@@ -13,8 +13,13 @@ const testAccounts: Account[] = [
     accountType: "Brukskonto",
   },
 ];
-export const fetchAccounts = async (): Promise<Account[]> => {
+export const fetchAccounts = async (
+  triggerError = false,
+): Promise<Account[]> => {
   await randomDelay();
+  if (triggerError) {
+    throw Error("Call failed");
+  }
   return testAccounts;
 };
 

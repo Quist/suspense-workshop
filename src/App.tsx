@@ -20,8 +20,9 @@ const theme = extendTheme({
 });
 
 function App() {
-  const queryClient = new QueryClient();
-
+  const queryClient = new QueryClient({
+    defaultOptions: { queries: { retry: false } },
+  });
   return (
     <ChakraProvider theme={theme}>
       <QueryClientProvider client={queryClient}>
