@@ -42,7 +42,8 @@ Erstatt useQuery med useSuspenseQuery og Error Boundary.
 For å implementere refetch funksjonaliteten kan det være du må rette Error Boundary.
 https://tanstack.com/query/latest/docs/framework/react/guides/suspense#resetting-error-boundaries
 
-
+### Oppgave 5 (AboutPage)
+About-siden venter til begge kallene etter Addresseinfo og basicInfo er lastet før den kan vise noe. Produkteieren din ønsker at de skal vises enkeltvis slik at de vises straks de er klare. Kan du refaktorere slik at de vises uavhengig av hverandre? 
 
 
 ## Ressurser 📖

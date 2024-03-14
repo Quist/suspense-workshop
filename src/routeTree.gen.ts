@@ -13,6 +13,7 @@ import { createFileRoute } from '@tanstack/react-router'
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
+import { Route as AboutImport } from './routes/about'
 import { Route as AccountsAccountIdIndexImport } from './routes/accounts/$accountId/index'
 import { Route as AccountsAccountIdPaymentIndexImport } from './routes/accounts/$accountId/payment/index'
 
@@ -21,6 +22,11 @@ import { Route as AccountsAccountIdPaymentIndexImport } from './routes/accounts/
 const IndexLazyImport = createFileRoute('/')()
 
 // Create/Update Routes
+
+const AboutRoute = AboutImport.update({
+  path: '/about',
+  getParentRoute: () => rootRoute,
+} as any)
 
 const IndexLazyRoute = IndexLazyImport.update({
   path: '/',
@@ -46,6 +52,10 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexLazyImport
       parentRoute: typeof rootRoute
     }
+    '/about': {
+      preLoaderRoute: typeof AboutImport
+      parentRoute: typeof rootRoute
+    }
     '/accounts/$accountId/': {
       preLoaderRoute: typeof AccountsAccountIdIndexImport
       parentRoute: typeof rootRoute
@@ -61,6 +71,7 @@ declare module '@tanstack/react-router' {
 
 export const routeTree = rootRoute.addChildren([
   IndexLazyRoute,
+  AboutRoute,
   AccountsAccountIdIndexRoute,
   AccountsAccountIdPaymentIndexRoute,
 ])
