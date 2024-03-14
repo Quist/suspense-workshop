@@ -1,16 +1,35 @@
 import { useQuery } from "@tanstack/react-query";
 import { fetchTransactions } from "../../api/transactions.ts";
 import { fetchAccountDetails } from "../../api/accounts.ts";
-import { Link } from "@tanstack/react-router";
+import { Link as TanstackLink } from "@tanstack/react-router";
+import {
+  Box,
+  Container,
+  Heading,
+  Table,
+  TableCaption,
+  TableContainer,
+  Tbody,
+  Link,
+  Divider,
+} from "@chakra-ui/react";
 
 export const AccountDetailsPage = ({ accountId }: { accountId: string }) => {
   return (
     <>
       <main>
-        <Link to={"/accounts/$accountId/payment"}>Betal fra Konto</Link>
-
-        <h2>Transaksjoner</h2>
-        <Transactions accountId={accountId} />
+        <Container justifyContent={"center"}>
+          <Box mt={25} ml={-20}>
+            <Link to={"/accounts/$accountId/payment"} as={TanstackLink}>
+              Betal fra Konto
+            </Link>
+            <Divider />
+          </Box>
+          <Heading mb={5} mt={10} textAlign={"center"}>
+            Transaksjoner
+          </Heading>
+          <Transactions accountId={accountId} />
+        </Container>
       </main>
     </>
   );
@@ -36,12 +55,20 @@ const Transactions = ({ accountId }: { accountId: string }) => {
 
   return (
     <>
-      <h3>{accountDetailsQuery.data?.accountName}</h3>
-      {transactionsQuery.data?.map((transactions) => (
-        <p key={transactions.line}>
-          {transactions.line}: {transactions.balance}
-        </p>
-      ))}
+      <TableContainer>
+        <Table variant={"striped"}>
+          <TableCaption>{accountDetailsQuery.data?.accountName}</TableCaption>
+          <Tbody>
+            {transactionsQuery.data?.map((transaction) => (
+              <tr key={transaction.line}>
+                <td>{transaction.line}</td>
+                <td>{transaction.balance}</td>
+                <td>17.01.2024</td>
+              </tr>
+            ))}
+          </Tbody>
+        </Table>
+      </TableContainer>
     </>
   );
 };
