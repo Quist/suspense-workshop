@@ -37,10 +37,11 @@ Istedenfor å bruke to separate useSuspenseQuery, se om du kan bruke [useSuspens
 
 
 ### Oppgave 4 (PaymentPage)
-TODO
+Erstatt useQuery med useSuspenseQuery og Error Boundary.
 
-IDEBANK
-* Resetting Error Boundaries (Retry f.eks på en errorside)
+For å implementere refetch funksjonaliteten kan det være du må rette Error Boundary.
+https://tanstack.com/query/latest/docs/framework/react/guides/suspense#resetting-error-boundaries
+
 
 
 

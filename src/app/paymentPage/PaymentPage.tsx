@@ -8,13 +8,15 @@ import {
   FormLabel,
   Heading,
   Input,
-  Text,
   Select,
+  Text,
 } from "@chakra-ui/react";
-import { useMutation, useQuery } from "@tanstack/react-query";
-import { fetchPreviousAccountNumbers, postPayment } from "../../api/payment.ts";
+import { useQuery } from "@tanstack/react-query";
+import { fetchPreviousAccountNumbers } from "../../api/payment.ts";
 import { ErrorBoundary } from "react-error-boundary";
 
+// @ts-expect-error Ignore unused accountId
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export const PaymentPage = ({ accountId }: { accountId: string }) => {
   return (
     <>
@@ -36,7 +38,6 @@ export const PaymentPage = ({ accountId }: { accountId: string }) => {
 };
 
 const PaymentContainer = () => {
-  const mutation = useMutation({ mutationFn: postPayment });
   const query = useQuery({
     queryKey: ["previous-accounts"],
     queryFn: () => fetchPreviousAccountNumbers(true),
@@ -46,7 +47,12 @@ const PaymentContainer = () => {
     return <p>Loading</p>;
   }
   if (query.isError) {
-    return <ErrorComponent />;
+    return (
+      <ErrorComponent
+        onRetry={() => query.refetch()}
+        isLoading={query.isLoading}
+      />
+    );
   }
   return (
     <>
@@ -72,11 +78,7 @@ const PaymentContainer = () => {
           <FormLabel>Beløp</FormLabel>
           <Input placeholder="Beløp" />
         </FormControl>
-        <Button
-          isLoading={mutation.isPending}
-          onClick={() => mutation.mutate("accountId")}
-          colorScheme="blue"
-        >
+        <Button isLoading={false} onClick={() => undefined} colorScheme="blue">
           Overfør
         </Button>
       </Flex>
@@ -84,10 +86,19 @@ const PaymentContainer = () => {
   );
 };
 
-const ErrorComponent = () => {
+const ErrorComponent = ({
+  onRetry,
+  isLoading,
+}: {
+  onRetry: () => void;
+  isLoading: boolean;
+}) => {
   return (
     <div>
       <Text>En teknisk feil har oppstått.</Text>
+      <Button isLoading={isLoading} onClick={onRetry}>
+        Prøv på nytt
+      </Button>
     </div>
   );
 };
