@@ -29,6 +29,8 @@ Implementer en loading-komponent, gjerne ved bruk av [Chakra Spinner](https://ch
 Utvide til å håndtere feil også (Error Boundary). For å enkelt komme i gang kan du installere denne pakken:
 https://www.npmjs.com/package/react-error-boundary
 
+Du kan endre parameteret til fetchfunksjonen for å teste at kallet feiler.
+
 ### Oppgave 3a (AccountDetailsPage)
 Refaktorer AccountDetailsPage til å bruke Suspense.
 
