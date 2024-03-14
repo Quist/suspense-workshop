@@ -20,18 +20,17 @@ Sørg for at du har den nyeste versjonen av [Node.js](https://nodejs.org/) insta
 ## Oppgaver ✍️
 BekkBank lanserer en ny storsatsning, BekkBank, men trenger din hjelp for å komme i mål.
 
-### Oppgave 1 (AccountPage)
+### Oppgave 1 (AccountDetailsPage)
 Ta i bruk Suspense i `AccountList.tsx` ved å endre `useQuery` til `useSuspenseQuery`. Klarer du deg uten if-setninger?
 
-### Oppgave 2 (AccountPage) 
-Utvide til å håndtere feil også (Error Boundary)
+### Oppgave 2 (AccountDetailsPage) 
+Utvide til å håndtere feil også (Error Boundary).
 
-### Oppgave 3a (TransactionPage)
-Refaktorere TransactionsPage til å bruke Suspense for alle fetches.
+### Oppgave 3a (AccountDetailsPage)
+Refaktorer AccountDetailsPage til å bruke Suspense for alle fetches.
 
-### Oppgave 3b (TransactionPage)
-Lokal suspense for <Driftsmeldinger/> ? 
-
+### Oppgave 4 (PaymentPage)
+TODO
 
 IDEBANK
 * Resetting Error Boundaries (Retry f.eks på en errorside)
